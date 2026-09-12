@@ -33,7 +33,19 @@ flowchart TD
 
 ---
 
-## 2. The Problem
+## 2. About FormFit AI
+
+FormFit AI was conceptualized and built by **[Muthuselvam](https://github.com/mmuthuselvam298)** as **Project 8** of an advanced software engineering and applied AI portfolio.
+
+### Core Philosophy
+- **Biomechanical Rigor Over Heuristic Hacks**: Human joints move on continuous kinematics curves. FormFit AI tracks physical inflection points through mathematical state machines rather than naive conditional statements.
+- **Real-Time Responsiveness**: Engineered with an asynchronous pipeline delivering $< 35\text{ms}$ latency and stable $28 - 30\text{ FPS}$ on standard laptop CPU hardware.
+- **Privacy by Default**: Visual video feeds are processed purely in volatile memory. No private workout recordings or face frames are ever uploaded or retained.
+- **Explainable Quality Scoring**: A clear, configurable heuristic quality model (Depth 40%, Alignment 35%, Cadence 25%) replaces opaque black-box accuracy percentages.
+
+---
+
+## 3. The Problem
 
 Most commercial workout trackers count steps or estimate heart rate without understanding **how** movements are performed. Meanwhile, basic computer vision demos suffer from severe real-world flaws:
 1. **Jitter & Accidental Reps**: Minor camera shake or half-reps trigger false counts.

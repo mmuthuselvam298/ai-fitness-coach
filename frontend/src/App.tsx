@@ -8,6 +8,7 @@ import { WorkoutSummaryPage } from './pages/WorkoutSummaryPage';
 import { HistoryPage } from './pages/HistoryPage';
 import { AnalyticsPage } from './pages/AnalyticsPage';
 import { DemoPage } from './pages/DemoPage';
+import { AboutPage } from './pages/AboutPage';
 import { ExerciseMetadata, WorkoutSummary } from './types';
 import { api } from './services/api';
 
@@ -79,6 +80,7 @@ export const App: React.FC = () => {
           <LandingPage
             onStartWorkout={handleStartWorkoutFromLanding}
             onTryDemo={handleTryDemoFromLanding}
+            onNavigateAbout={() => setCurrentView('about')}
             exercises={exercises}
           />
         )}
@@ -120,6 +122,10 @@ export const App: React.FC = () => {
 
         {currentView === 'demo' && (
           <DemoPage onLaunchDemoWorkout={handleLaunchDemoWorkout} />
+        )}
+
+        {currentView === 'about' && (
+          <AboutPage onStartWorkout={() => setCurrentView('exercises')} />
         )}
       </main>
 

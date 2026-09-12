@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Activity, Play, BarChart2, History, Shield, Zap } from 'lucide-react';
+import { Play, BarChart2, History, Zap, Info } from 'lucide-react';
 import { api } from '../services/api';
 
 interface NavbarProps {
@@ -123,6 +123,15 @@ export const Navbar: React.FC<NavbarProps> = ({ currentView, onNavigate }) => {
           >
             <BarChart2 size={15} />
             <span>Progress</span>
+          </button>
+
+          <button
+            onClick={() => onNavigate('about')}
+            className={`btn btn-sm ${currentView === 'about' ? 'btn-primary' : 'btn-secondary'}`}
+            style={{ border: 'none' }}
+          >
+            <Info size={15} />
+            <span>About</span>
           </button>
         </nav>
 

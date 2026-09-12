@@ -5,12 +5,14 @@ import { ExerciseMetadata } from '../types';
 interface LandingPageProps {
   onStartWorkout: () => void;
   onTryDemo: () => void;
+  onNavigateAbout?: () => void;
   exercises: ExerciseMetadata[];
 }
 
 export const LandingPage: React.FC<LandingPageProps> = ({
   onStartWorkout,
   onTryDemo,
+  onNavigateAbout,
   exercises,
 }) => {
   return (
@@ -269,6 +271,47 @@ export const LandingPage: React.FC<LandingPageProps> = ({
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      {/* About Section on Landing Page */}
+      <section className="card" style={{
+        backgroundColor: '#FFFFFF',
+        padding: '36px 28px',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: 20,
+        borderLeft: '5px solid var(--accent-green)',
+      }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: 12 }}>
+          <div>
+            <div className="badge badge-green" style={{ marginBottom: 6 }}>About FormFit AI</div>
+            <h2 style={{ fontSize: '1.8rem', fontWeight: 800 }}>Engineered for Real Biomechanics</h2>
+          </div>
+          {onNavigateAbout && (
+            <button onClick={onNavigateAbout} className="btn btn-secondary btn-sm">
+              <span>Read Full Architecture & Story</span>
+              <ArrowRight size={14} />
+            </button>
+          )}
+        </div>
+
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.96rem', lineHeight: 1.7, maxWidth: 840 }}>
+          FormFit AI was created by <strong>Muthuselvam</strong> as Project 8 of an advanced AI software engineering portfolio. Rather than relying on simple webcam angle heuristics or black-box health predictions, FormFit AI delivers deterministic movement phase state machines, One Euro velocity-adaptive landmark filtering, and transparent 0–100 quality scoring.
+        </p>
+
+        <div style={{
+          display: 'flex',
+          flexWrap: 'wrap',
+          gap: 16,
+          paddingTop: 8,
+          fontSize: '0.85rem',
+          color: 'var(--text-muted)',
+        }}>
+          <span>• <strong>Python 3.12 & FastAPI</strong></span>
+          <span>• <strong>MediaPipe Tasks API (Metal/XNNPACK)</strong></span>
+          <span>• <strong>React 19 & TypeScript</strong></span>
+          <span>• <strong>Zero Persistent Visual Storage</strong></span>
         </div>
       </section>
     </div>
