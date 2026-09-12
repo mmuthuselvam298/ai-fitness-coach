@@ -1,0 +1,20 @@
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B"]
+ignore = [
+    "E501",  # Line length
+    "B008",  # FastAPI Depends/File/Form in function arguments
+    "B007",  # Loop control variable not used
+    "B904",  # Within an except clause
+]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+testpaths = ["backend/tests"]
+pythonpath = ["backend"]
+filterwarnings = [
+    "ignore::DeprecationWarning",
+]
